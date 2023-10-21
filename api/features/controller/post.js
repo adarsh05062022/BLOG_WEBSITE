@@ -24,14 +24,27 @@ const getPosts = async (req, res) => {
 };
 
 
-const getPost = async (req, res) => {
-  const userId = req.params.id;
-  const q = "SELECT * FROM blogs WHERE user_id=?";
+const getPost = async (req, res) => {  
+  const blogId = req.params.bid;
+ 
+  const q = "SELECT * FROM blogs WHERE blog_id=?";
   try {
     const connection = await createConnection();
-    const [result] = await connection.execute(q, [userId]);
+    const [result] = await connection.execute(q, [blogId]);
     await connection.end();
-    res.json(result);
+
+    if(result.length === 0){
+       return res.status(400).json({
+                message: "bad request",
+                data:[],
+              });
+    }
+
+    res.status(200).json({
+      message: "request successful",
+      data: [{ result: result[0], status: 200 }],
+    });
+   
   } catch (error) {
     console.log(error);
     res.json({ error: error });

@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 sm-12 lg-6">
+        <div class="container__logo">
+          <h1 style="color: aliceblue">WELCOME</h1>
+        </div>
+      </div>
+      <div class="col-md-6 sm-12 lg-6">
+        <div class="container__theft_heading">
+          <div class="w-100">
+            <h1>Login</h1>
+      
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <div class="container__theft_heading__icon">
+                <div class="d-flex">
+                  <img src="/assets/icon/sms-edit.jpg" alt="" />
+                  <label for="email">Email Id</label>
+                </div>
+                <div>
+                  <input
+                    class="form-control"
+                    formControlName="email"
+                    type="email"
+                    placeholder="Enter the email"
+                  />
+                </div>
+      
+                <div class="d-flex mt-4">
+                  <img src="/assets/icon/lock.jpg" alt="" />
+                  <label for="password">Password</label>
+                </div>
+                <div>
+                  <input
+                    class="form-control"
+                    formControlName="password"
+                    type="password"
+                    placeholder="Enter the password"
+                  />
+                </div>
+                <a routerLink="/forget-password">Forget password?</a>
+              </div>
+              <button class="btn btn-primary" type="submit" [disabled]="!loginForm.valid">Continue</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

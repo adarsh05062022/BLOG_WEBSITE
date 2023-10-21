@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="container__logo">
+          <h1 style="color: aliceblue">WELCOME</h1>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="container__theft_heading">
+            <div class="w-100">
+              <h1>Register</h1>
+              <!-- <h2 class="mt-3">Welcome</h2> -->
+              <div class="container__theft_heading__icon">
+                <div>
+                  <!-- <img src="/assets/icon/sms-edit.jpg" alt=""> -->
+                  <p>Enter Username</p>
+                </div>
+                <div>
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Enter the username"
+                    formControlName="username"
+                  />
+                </div>
+                <div>
+                  <!-- <img src="/assets/icon/sms-edit.jpg" alt=""> -->
+                  <p>Enter Email</p>
+                </div>
+                <div>
+                  <input
+                    class="form-control"
+                    type="email"
+                    placeholder="Enter the email"
+                    formControlName="email"
+                  />
+                </div>
+                <div class="mt-4">
+                  <!-- <img src="/assets/icon/lock.jpg" alt=""> -->
+                  <p>New Password</p>
+                </div>
+                <div>
+                  <input
+                    class="form-control"
+                    type="password"
+                    placeholder="Enter the  password"
+                    formControlName="password"
+                  />
+                </div>
+                <!-- <a href="">Forget password?</a> -->
+              </div>
+              <button class="btn btn-primary">Continue</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

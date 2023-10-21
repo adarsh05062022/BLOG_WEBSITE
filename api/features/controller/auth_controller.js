@@ -44,7 +44,6 @@ const register = async (req, res) => {
   }
 };
 
-
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -68,12 +67,18 @@ const login = async (req, res) => {
           expiresIn: "1d",
         });
         const { password, ...other } = result;
+        const {user_id,username,profile_image,email} = result
         res
-          .cookie("access_token", token, { httpOnly: true })
           .status(200)
-          .json({ message: "login successful" });
+          .json({
+            success:1,
+            token: token   ,
+            data:    {user_id,username,profile_image,email}    
+          });
       } else {
-        res.status(400).json({ message: "password mismatch" });
+        res.status(400).json({ 
+          success:0,
+          message: "password mismatch" });
       }
     }
   } catch (error) {
@@ -81,7 +86,6 @@ const login = async (req, res) => {
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
-
 
 const change = async (req, res) => {
   const { email, password, confirmPassword } = req.body;
@@ -116,7 +120,6 @@ const change = async (req, res) => {
     }
   } catch (error) {}
 };
-
 
 const logout = async (req, res) => {
   res

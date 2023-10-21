@@ -1,0 +1,31 @@
+.card {
+  background: #434858 !important;
+}
+.card-title {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.3;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.66);
+
+  text-decoration-color: rgba(255, 255, 255, 0.1);
+}
+
+.card-header {
+  text-align: center;
+}
+
+.card-text {
+  /* text-align: center; */
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  word-spacing: 5px;
+}
+
+
+.authorName {
+  color: blueviolet;
+}
+.date{
+  color: #caff00;
+}

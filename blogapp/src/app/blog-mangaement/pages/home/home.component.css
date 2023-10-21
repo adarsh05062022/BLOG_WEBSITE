@@ -1,0 +1,14 @@
+.blogsContainer {
+        display: flex;
+      }
+      .blogs {
+        flex: 70%;
+        
+      }
+      .extra {
+        flex: 30%;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      

@@ -1,0 +1,16 @@
+get: http://localhost:4000/user/2/post
+get: http://localhost:4000/user/2/post/7
+
+
+
+
+
+
+
+
+
+fields:-
+
+blog:-
+
+blog_id, blog_Title , blog_Content , blog_Author , blog_Date , user_id

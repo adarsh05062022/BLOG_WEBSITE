@@ -1,0 +1,35 @@
+<div class="editor-container container-fluid">
+  <div class="input-group flex-nowrap py-3">
+    <span class="input-group-text" id="addon-wrapping">Title</span>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Enter the title"
+      aria-label="Username"
+      aria-describedby="addon-wrapping"
+      [(ngModel)]="title"
+    />
+  </div>
+  <div class="input-group flex-nowrap py-3">
+    <span class="input-group-text" id="addon-wrapping">Category</span>
+    <select
+      class="form-select"
+      [(ngModel)]="cat"
+      aria-label="Default select example"
+    >
+      <option value="one">One</option>
+      <option value="two">Two</option>
+      <option value="three">Three</option>
+    </select>
+  </div>
+
+  <div class="editor">
+    <app-editor #editorComponent></app-editor>
+  </div>
+
+  <div class="button m-4">
+    <button type="button" class="btn btn-secondary" [disabled]="isButtonDisabled()" (click)="onSubmit()">
+      ADD BLOG
+    </button>
+  </div>
+</div>

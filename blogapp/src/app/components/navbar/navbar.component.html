@@ -1,0 +1,77 @@
+<header
+  id="header"
+  class="fixed-top d-flex align-items-center"
+  [ngStyle]="{
+    'box-shadow':
+      activeSection !== 'home' ? '0 0.5rem 1rem rgba(0, 0, 0, 0.15)' : '',
+    
+  }"
+>
+  <div class="container d-flex align-items-center justify-content-between">
+    <div class="logo">
+      <a routerLink="/">
+        <span class="titleText">
+          <span class="titleTextPrefix">MYGood</span
+          ><span class="titleTextExtra">.blog</span>
+        </span>
+      </a>
+    </div>
+
+    <nav
+      id="navbar"
+      class="navbar"
+      [ngClass]="{ 'navbar-mobile': mobilelView }"
+    >
+      <ul>
+        <li>
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li *ngIf="isLogin">
+          <a class="nav-link" routerLink="/add">Create a blog</a>
+        </li>
+
+        <li *ngIf="!isLogin">
+          <a class="nav-link" routerLink="/login">SIGN IN</a>
+        </li>
+        <li *ngIf="isLogin">
+          <div
+            ngbDropdown
+            class="d-inline-block profileLogo custom-dropdown"
+            style="position: relative"
+          >
+            <img
+              ngbDropdownToggle
+              src="../../../assets/IMG/profile.png"
+              alt=""
+            />
+
+            <div ngbDropdownMenu class="custom-dropdown-menu">
+              <div class="dropdownWrapper">
+                <div class="profileHeading">{{ userDetails.username }}</div>
+                <div class="profileText">{{ userDetails.email }}</div>
+
+                <button class="changePasswordButton" ngbDropdownItem >
+                  <a [routerLink]="['/profile',userDetails.user_id]" style="color: #ffffff">Go To Profile</a>
+                </button>
+                <button
+                  class="LogoutButton"
+                  (click)="logoutClick()"
+                  ngbDropdownItem
+                >
+                  Logout
+                </button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <mat-icon
+        class="mobile-nav-toggle"
+        [ngStyle]="{ color: mobilelView ? '#fff' : '#222222' }"
+        (click)="toogleMobileView()"
+        >{{ mobileToogleIcon }}</mat-icon
+      >
+    </nav>
+  </div>
+</header>

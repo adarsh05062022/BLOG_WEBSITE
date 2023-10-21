@@ -1,0 +1,27 @@
+<div class="card text-white bg-dark mb-3 p-5">
+  <div class="card-body">
+    <div class="card-header px-0">
+      <div>
+        <span class="date">{{ blog.created_date | date }}</span> by
+        <a
+          [routerLink]="['/profile', blog.user_id]"
+          style="text-decoration: none"
+          ><span class="authorName">{{ blog.author }}</span></a
+        >
+      </div>
+
+      <span *ngIf="blog.cat" class="category">#{{ blog.cat }}</span>
+    </div>
+
+    <h5 class="card-title">{{ blog.title }}</h5>
+    <div class="card-text">
+      <div [innerHTML]="blog.content"></div>
+    </div>
+
+    <button type="button" class="btn btn-secondary mt-4 px-5 py-2">
+      <a [routerLink]="['/blog', blog.blog_id]" style="text-decoration: none"
+        >READ MORE</a
+      >
+    </button>
+  </div>
+</div>

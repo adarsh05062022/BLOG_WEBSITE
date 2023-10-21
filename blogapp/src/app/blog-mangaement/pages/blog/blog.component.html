@@ -1,0 +1,11 @@
+<div class="card text-white bg-dark mb-3 p-5 mt-5 container">
+  <div class="card-body">
+    <h5 class="card-title">{{ blogdata.title }}</h5>
+
+    <div class="card-header px-0">
+      <span class="date">{{ blogdata.created_date | date }}</span> by
+      <span class="authorName">{{ blogdata.author }}</span>
+    </div>
+    <p class="card-text" [innerHTML]="blogdata.content"></p>
+  </div>
+</div>

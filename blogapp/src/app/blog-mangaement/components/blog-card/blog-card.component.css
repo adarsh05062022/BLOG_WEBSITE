@@ -1,0 +1,42 @@
+.card {
+  background: #434858 !important;
+  width: 70vw;
+}
+.card-body {
+  max-width: inherit;
+}
+.card-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.66);
+  text-decoration: underline;
+  text-decoration-thickness: 5px;
+
+  text-decoration-color: rgba(255, 255, 255, 0.1);
+}
+.card-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-text {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  width: inherit;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  max-width: inherit;
+}
+
+.authorName {
+  color: blueviolet;
+}
+.date{
+  color: #caff00;
+}
+.category{
+  color: #ff8c8c;
+}
